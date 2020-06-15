@@ -2,7 +2,7 @@ import numpy as np
 from gomoku import State
 import pickle
 
-N = 10
+N = 3
 class Player:
     def __init__(self, name, exp_rate=0.3):
         self.name = name
@@ -85,23 +85,4 @@ class HumanPlayer:
         pass
 
 
-if __name__ == "__main__":
-    # training
-    p1 = Player("p1")
-    p2 = Player("p2")
-
-    st = State(p1, p2)
-    print("training...")
-    rounds = 10000
-    st.play(rounds)
-    p1.savePolicy(rounds)
-
-    # play with human
-    p1 = Player("computer", exp_rate=0)
-    p1.loadPolicy("models/10_dim_10000_rounds")
-
-    p2 = HumanPlayer("human")
-
-    st = State(p1, p2)
-    st.play2()
 

@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 from tqdm import tqdm
 
-N = 10
+N = 3
 IN_A_ROW = 3
 EMPTY_SPACE = 0
 
